@@ -81,9 +81,13 @@ export function ListingModal({ listing, onClose }: ListingModalProps) {
             </div>
           )}
 
-          <a href={listing.url} target="_blank" rel="noopener noreferrer" className="modal-link">
-            Открыть оригинал объявления →
-          </a>
+          {listing.url && /^https?:\/\//.test(listing.url) ? (
+            <a href={listing.url} target="_blank" rel="noopener noreferrer" className="modal-link">
+              Открыть оригинал объявления →
+            </a>
+          ) : (
+            <span className="modal-link" style={{ opacity: 0.5 }}>Ссылка недоступна</span>
+          )}
         </div>
       </div>
     </div>
