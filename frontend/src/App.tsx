@@ -17,7 +17,7 @@ export default function App() {
   const [selectedListing, setSelectedListing] = useState<Listing | null>(null)
   const [parseStatus, setParseStatus] = useState<ParseStatus | null>(null)
   const [filters, setFilters] = useState<ListingFilters>({})
-  const debounceRef = useRef<ReturnType<typeof setTimeout>>()
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   useEffect(() => {
     fetchRegions().then(setRegions)
