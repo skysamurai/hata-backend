@@ -1,0 +1,66 @@
+<h2>Правая панель: статистика и парсинг</h2>
+<p class="subtitle">В правой части экрана — сводка и управление. Два подхода к организации.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант A: Компактные виджеты</div>
+        <div class="mockup-body">
+          <div style="width:220px;font-size:11px;">
+            <div style="background:#f5f5f5;border-radius:6px;padding:8px;margin-bottom:6px;">
+              <div style="font-weight:bold;margin-bottom:4px;">📊 Статистика</div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>Всего:</span><b>342</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>👤 Собственники:</span><b>198</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>🤖 Агенты:</span><b>144</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>🆕 Сегодня:</span><b>+15</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>Авито:</span> 201</div>
+              <div style="display:flex;justify-content:space-between;"><span>Циан:</span> 141</div>
+            </div>
+            <div style="background:#f5f5f5;border-radius:6px;padding:8px;">
+              <div style="font-weight:bold;margin-bottom:4px;">⚙ Парсинг</div>
+              <button class="mock-button" style="width:100%;margin-bottom:3px;">▶ Запустить Авито</button>
+              <button class="mock-button" style="width:100%;margin-bottom:3px;">▶ Запустить Циан</button>
+              <div style="font-size:10px;color:#666;margin-top:4px;">Последний запуск: 5 мин назад<br>Статус: ✓ завершён</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Компактные виджеты</h3>
+      <p>Два блока: статистика (цифры) и парсинг (кнопки). Всё видно сразу, без прокрутки. Минимум кликов.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант B: Вкладки в панели</div>
+        <div class="mockup-body">
+          <div style="width:220px;font-size:11px;">
+            <div style="display:flex;border-bottom:2px solid #1976d2;margin-bottom:6px;">
+              <div style="background:#1976d2;color:#fff;padding:4px 8px;border-radius:3px 3px 0 0;">📊</div>
+              <div style="padding:4px 8px;color:#999;">⚙</div>
+              <div style="padding:4px 8px;color:#999;">📋</div>
+            </div>
+            <div style="background:#f5f5f5;border-radius:6px;padding:8px;">
+              <div style="font-weight:bold;margin-bottom:4px;">📊 Статистика</div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>Всего:</span><b>342</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>Новых сегодня:</span><b>+15</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>Собственники:</span><b>58%</b></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Агенты:</span><b>42%</b></div>
+              <div style="border-top:1px solid #ddd;padding-top:4px;font-size:10px;color:#666;">
+                ⚠ Переключись на «Парсинг» чтобы запустить сбор
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Вкладки в панели</h3>
+      <p>Статистика, Парсинг, История — на отдельных вкладках. Экономия места, но лишний клик для переключения.</p>
+    </div>
+  </div>
+</div>

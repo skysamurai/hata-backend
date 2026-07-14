@@ -1,0 +1,91 @@
+<h2>Какая раскладка страницы лучше?</h2>
+<p class="subtitle">Hata — агрегатор объявлений недвижимости. Основной сценарий: просмотр ленты объявлений с фильтрами, статистика, запуск парсинга.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант A: Dashboard с сайдбаром</div>
+        <div class="mockup-body">
+          <div style="display:flex;min-height:180px;">
+            <div class="mock-sidebar" style="width:120px;flex-shrink:0;">Лого<br>—<br>Список<br>Статистика<br>Парсинг</div>
+            <div style="flex:1;padding:6px;">
+              <div style="display:flex;gap:4px;margin-bottom:6px;">
+                <div class="placeholder" style="flex:1;padding:4px;">Регион ▼</div>
+                <div class="placeholder" style="flex:1;padding:4px;">Комнат ▼</div>
+                <div class="placeholder" style="flex:1;padding:4px;">Цена от</div>
+                <div class="placeholder" style="flex:1;padding:4px;">Цена до</div>
+                <button class="mock-button">🔍</button>
+              </div>
+              <div style="display:flex;gap:4px;flex-direction:column;">
+                <div class="placeholder" style="padding:8px;">📍 2-к квартира, 65м² — 12 000 000 ₽ — Авито</div>
+                <div class="placeholder" style="padding:8px;">📍 1-к квартира, 38м² — 7 500 000 ₽ — Циан</div>
+                <div class="placeholder" style="padding:8px;">📍 3-к квартира, 82м² — 18 200 000 ₽ — Авито</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Dashboard + Сайдбар</h3>
+      <p>Навигация слева, контент справа. Три раздела: Список / Статистика / Парсинг — каждый со своим view.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант B: Одностраничная лента</div>
+        <div class="mockup-body">
+          <div class="mock-nav">Hata &nbsp; | &nbsp; Регион ▼ &nbsp; Комнат ▼ &nbsp; Цена: от — до &nbsp; 🔍</div>
+          <div style="padding:6px;display:flex;gap:4px;flex-wrap:wrap;">
+            <div style="flex:1;min-width:200px;">
+              <div class="placeholder" style="padding:8px;margin-bottom:3px;">📍 2-к, 65м² — 12M ₽ — 👤Private</div>
+              <div class="placeholder" style="padding:8px;margin-bottom:3px;">📍 1-к, 38м² — 7.5M ₽ — 🤖Agent 70%</div>
+              <div class="placeholder" style="padding:8px;margin-bottom:3px;">📍 3-к, 82м² — 18.2M ₽ — 👤Private</div>
+              <div class="placeholder" style="padding:8px;margin-bottom:3px;">📍 Студия, 24м² — 4.1M ₽ — 🤖Agent 90%</div>
+            </div>
+            <div style="width:180px;">
+              <div class="placeholder" style="padding:6px;margin-bottom:4px;">📊 Статистика<br>Всего: 342<br>Новых: 15</div>
+              <div class="placeholder" style="padding:6px;">⚙ Парсинг<br><button class="mock-button">▶ Авито</button><br><button class="mock-button">▶ Циан</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Одностраничная лента</h3>
+      <p>Всё на одной странице: фильтры сверху, лента слева, справа — статистика и кнопки парсинга. Без переходов между разделами.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант C: Табы (список / статистика / парсинг)</div>
+        <div class="mockup-body">
+          <div class="mock-nav">Hata &nbsp; | &nbsp; [Список] &nbsp; Статистика &nbsp; Парсинг</div>
+          <div style="padding:6px;">
+            <div style="display:flex;gap:4px;margin-bottom:6px;">
+              <div class="placeholder" style="padding:4px;">Регион ▼</div>
+              <div class="placeholder" style="padding:4px;">Комнат ▼</div>
+              <div class="placeholder" style="padding:4px;">Цена от-до</div>
+              <button class="mock-button">🔍</button>
+              <div style="margin-left:auto;font-size:11px;">342 объявления | 15 новых сегодня</div>
+            </div>
+            <div style="display:flex;gap:4px;flex-direction:column;">
+              <div class="placeholder" style="padding:8px;display:flex;justify-content:space-between;">📍 2-к, 65м², СПб &nbsp; 12 000 000 ₽ &nbsp; <span style="color:green;">👤 Private</span></div>
+              <div class="placeholder" style="padding:8px;display:flex;justify-content:space-between;">📍 1-к, 38м², Мск &nbsp; 7 500 000 ₽ &nbsp; <span style="color:red;">🤖 Agent 70%</span></div>
+              <div class="placeholder" style="padding:8px;display:flex;justify-content:space-between;">📍 3-к, 82м², СПб &nbsp; 18 200 000 ₽ &nbsp; <span style="color:green;">👤 Private</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Табы</h3>
+      <p>Верхняя панель с вкладками переключает вид: Список объявлений, Статистика, Управление парсингом. Фильтры под табами.</p>
+    </div>
+  </div>
+</div>

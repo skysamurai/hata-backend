@@ -1,0 +1,80 @@
+<h2>Как должны работать фильтры?</h2>
+<p class="subtitle">Фильтры: регион, комнатность, цена (от/до), метро, источник (авито/циан), агент/собственник.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант A: Компактная строка</div>
+        <div class="mockup-body">
+          <div class="mock-nav" style="font-size:12px;padding:4px 8px;">
+            Регион ▼ &nbsp; Комнат ▼ &nbsp; Цена от &nbsp; Цена до &nbsp; Метро &nbsp; Источник ▼ &nbsp; <label><input type="checkbox"> Только собственники</label> &nbsp; <button class="mock-button" style="padding:2px 8px;">Найти</button>
+          </div>
+          <div style="padding:8px;font-size:11px;color:var(--muted,#888);">Найдено: 342 объявления. Клик по фильтрам меняет результаты после нажатия «Найти».</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Компактная строка</h3>
+      <p>Все фильтры в одну строку. Кнопка «Найти» применяет фильтры явно.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант B: Панель с автоприменением</div>
+        <div class="mockup-body">
+          <div style="padding:6px;">
+            <div style="display:flex;gap:4px;margin-bottom:4px;flex-wrap:wrap;">
+              <select class="mock-input" style="padding:3px;"><option>Все регионы</option><option>Санкт-Петербург</option><option>Москва</option></select>
+              <select class="mock-input" style="padding:3px;"><option>Любая комнатность</option><option>Студия</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+              <input class="mock-input" placeholder="Цена от" style="width:70px;padding:3px;">
+              <input class="mock-input" placeholder="Цена до" style="width:70px;padding:3px;">
+              <input class="mock-input" placeholder="Метро" style="width:80px;padding:3px;">
+              <select class="mock-input" style="padding:3px;"><option>Все источники</option><option>Авито</option><option>Циан</option></select>
+              <label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Собственники</label>
+            </div>
+            <div style="font-size:11px;background:#e8f5e9;padding:4px 8px;border-radius:3px;">✓ Фильтры применяются автоматически при изменении любого поля</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Панель с автоприменением</h3>
+      <p>Фильтры в 1-2 строках, срабатывают сразу при изменении — без кнопки «Найти». Дебаунс 300ms для текстовых полей.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант C: Раскрывающаяся панель</div>
+        <div class="mockup-body">
+          <div style="padding:6px;">
+            <div class="mock-nav" style="font-size:12px;padding:4px 8px;display:flex;justify-content:space-between;">
+              <span>📍 СПб · 1-2к · 5-15M · Собственники</span>
+              <span style="text-decoration:underline;cursor:pointer;">⚙ Фильтры ▾</span>
+            </div>
+            <div style="border:1px dashed #ccc;padding:6px;margin-top:4px;border-radius:4px;">
+              <div style="display:flex;gap:4px;flex-wrap:wrap;">
+                <select class="mock-input" style="padding:3px;"><option>Все регионы</option></select>
+                <select class="mock-input" style="padding:3px;"><option>Комнат: любо</option></select>
+                <input class="mock-input" placeholder="Цена от" style="width:70px;">
+                <input class="mock-input" placeholder="до" style="width:70px;">
+                <input class="mock-input" placeholder="Метро" style="width:80px;">
+                <select class="mock-input" style="padding:3px;"><option>Все источники</option></select>
+                <label style="font-size:12px;"><input type="checkbox"> Собственники</label>
+              </div>
+            </div>
+            <div style="font-size:11px;margin-top:2px;color:var(--muted,#888);">Активные фильтры видны в свёрнутой строке. Развернуть — чтобы изменить.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Раскрывающаяся панель</h3>
+      <p>В свёрнутом виде — строка активных фильтров. Разворачивается для редактирования. Экономит место на экране.</p>
+    </div>
+  </div>
+</div>

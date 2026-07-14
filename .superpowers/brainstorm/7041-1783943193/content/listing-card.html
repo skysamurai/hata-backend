@@ -1,0 +1,88 @@
+<h2>Дизайн карточки объявления в ленте</h2>
+<p class="subtitle">Какие данные важны при беглом просмотре? Выбери уровень детализации.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант A: Компактная строка</div>
+        <div class="mockup-body" style="font-size:12px;">
+          <div style="border-bottom:1px solid #eee;padding:6px 4px;display:flex;gap:8px;align-items:center;">
+            <span style="font-weight:bold;min-width:70px;">2-к, 65 м²</span>
+            <span style="color:#c62828;font-weight:bold;min-width:100px;">12 000 000 ₽</span>
+            <span style="color:#666;min-width:80px;">📍 СПб</span>
+            <span style="color:#666;">м. Приморская</span>
+            <span style="margin-left:auto;font-size:11px;background:#e8f5e9;padding:1px 6px;border-radius:3px;">👤 Private</span>
+            <span style="font-size:10px;color:#999;">5 мин</span>
+          </div>
+          <div style="border-bottom:1px solid #eee;padding:6px 4px;display:flex;gap:8px;align-items:center;">
+            <span style="font-weight:bold;min-width:70px;">1-к, 38 м²</span>
+            <span style="color:#c62828;font-weight:bold;min-width:100px;">7 500 000 ₽</span>
+            <span style="color:#666;min-width:80px;">📍 Мск</span>
+            <span style="color:#666;">м. Южная</span>
+            <span style="margin-left:auto;font-size:11px;background:#ffebee;padding:1px 6px;border-radius:3px;">🤖 Agent 70</span>
+            <span style="font-size:10px;color:#999;">12 мин</span>
+          </div>
+          <div style="border-bottom:1px solid #eee;padding:6px 4px;display:flex;gap:8px;align-items:center;">
+            <span style="font-weight:bold;min-width:70px;">Студия, 24 м²</span>
+            <span style="color:#c62828;font-weight:bold;min-width:100px;">4 100 000 ₽</span>
+            <span style="color:#666;min-width:80px;">📍 СПб</span>
+            <span style="color:#666;">м. Василеостровская</span>
+            <span style="margin-left:auto;font-size:11px;background:#e8f5e9;padding:1px 6px;border-radius:3px;">👤 Private</span>
+            <span style="font-size:10px;color:#999;">23 мин</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Компактная строка</h3>
+      <p>Одна строка на объявление: комнаты/площадь, цена, район, метро, статус (агент/собственник), время. Максимум плотности — на экране видно 20+ объявлений.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mockup">
+        <div class="mockup-header">Вариант B: Карточка-плитка</div>
+        <div class="mockup-body">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:11px;">
+            <div style="border:1px solid #e0e0e0;border-radius:6px;padding:8px;width:200px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-weight:bold;">2-к, 65 м²</span>
+                <span style="background:#e8f5e9;padding:1px 5px;border-radius:3px;">👤</span>
+              </div>
+              <div style="color:#c62828;font-weight:bold;font-size:14px;margin-bottom:4px;">12 000 000 ₽</div>
+              <div style="color:#666;">📍 СПб, м. Приморская</div>
+              <div style="color:#666;">🏢 5/12 эт. · Авито</div>
+              <div style="color:#999;margin-top:2px;">5 минут назад</div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:6px;padding:8px;width:200px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-weight:bold;">1-к, 38 м²</span>
+                <span style="background:#ffebee;padding:1px 5px;border-radius:3px;">🤖70</span>
+              </div>
+              <div style="color:#c62828;font-weight:bold;font-size:14px;margin-bottom:4px;">7 500 000 ₽</div>
+              <div style="color:#666;">📍 Мск, м. Южная</div>
+              <div style="color:#666;">🏢 3/9 эт. · Циан</div>
+              <div style="color:#999;margin-top:2px;">12 минут назад</div>
+            </div>
+            <div style="border:1px solid #e0e0e0;border-radius:6px;padding:8px;width:200px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-weight:bold;">Студия, 24 м²</span>
+                <span style="background:#e8f5e9;padding:1px 5px;border-radius:3px;">👤</span>
+              </div>
+              <div style="color:#c62828;font-weight:bold;font-size:14px;margin-bottom:4px;">4 100 000 ₽</div>
+              <div style="color:#666;">📍 СПб, м. ВО</div>
+              <div style="color:#666;">🏢 2/5 эт. · Авито</div>
+              <div style="color:#999;margin-top:2px;">23 минуты назад</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Карточка-плитка</h3>
+      <p>Плитки в 3-4 колонки. Цена крупнее, статус в углу. Больше воздуха, но меньше плотность — видно 8-10 карточек на экране.</p>
+    </div>
+  </div>
+</div>
