@@ -9,6 +9,9 @@ import { ParseWidget } from './components/ParseWidget'
 import './App.css'
 
 export default function App() {
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>(
+    () => (localStorage.getItem('theme') as 'light' | 'dark' | 'system') || 'system'
+  )
   const [regions, setRegions] = useState<Region[]>([])
   const [listings, setListings] = useState<Listing[]>([])
   const [total, setTotal] = useState(0)
@@ -18,6 +21,16 @@ export default function App() {
   const [parseStatus, setParseStatus] = useState<ParseStatus | null>(null)
   const [filters, setFilters] = useState<ListingFilters>({})
   const debounceRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+
+  useEffect(() => {
+    const root = document.documentElement
+    localStorage.setItem('theme', theme)
+    if (theme === 'system') {
+      root.removeAttribute('data-theme')
+    } else {
+      root.setAttribute('data-theme', theme)
+    }
+  }, [theme])
 
   useEffect(() => {
     fetchRegions().then(setRegions)
@@ -94,6 +107,13 @@ export default function App() {
     <div className="app">
       <header className="app-header">
         <h1>Hata</h1>
+        <button
+          className="theme-toggle"
+          onClick={() => setTheme(t => t === 'light' ? 'dark' : t === 'dark' ? 'system' : 'light')}
+          aria-label="Сменить тему"
+        >
+          {theme === 'light' ? '☀️' : theme === 'dark' ? '🌙' : '💻'}
+        </button>
       </header>
 
       <main className="app-main">

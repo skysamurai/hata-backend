@@ -5,12 +5,28 @@
 }
 
 .app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 8px 0 16px;
 }
 
 .app-header h1 {
   font-size: 20px;
   font-weight: 700;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  padding: 6px 10px;
+  font-size: 16px;
+  transition: background 0.15s;
+}
+
+.theme-toggle:hover {
+  background: var(--border);
 }
 
 .app-main {
